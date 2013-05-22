@@ -1,0 +1,11 @@
+#con este simple scripts lo que haremos es bloquear nuestro directorio
+
+#!/bin/bash
+chown -R root:root "$1"
+chmod 700 "$1"
+
+#con este le quitamos la proteccion 
+
+#!/bin/bash
+chmod -R 777 "$1"
+chown -R $USER:$USER "$1"
