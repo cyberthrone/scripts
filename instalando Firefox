@@ -1,0 +1,72 @@
+Ir a carpeta personal (por ejemplo /home/tunombre)
+
+Crear archivo de texto que contenga lo de abajo y guardarlo como firefoxdesktop en tu carpeta personal (al final de la instalacion puedes borrarlo)
+
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=Firefox
+Name[es]=Firefox
+Comment=Browse the World Wide Web
+Comment[es]=Navegue por la web
+GenericName=Web Browser
+GenericName[es]=Navegador web
+X-GNOME-FullName=Firefox Web Browser
+X-GNOME-FullName[es]=Navegador web Firefox
+Exec=firefox %u
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=firefox
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
+StartupWMClass=Firefox-bin
+StartupNotify=true
+
+
+
+
+********************** Instalacion en una sola  orden **********************
+
+Ir en terminal a carpeta personal (por ejemplo /home/tunombre)
+
+su -c 'wget http://download.cdn.mozilla.net/pub/mozilla.org/firefox/releases/20.0.1/linux-i686/es-AR/firefox-20.0.1.tar.bz2 && tar -xvf firefox*.bz2 && mv firefox/ /usr/lib/ && cp /usr/lib/firefox/icons/mozicon128.png /usr/share/icons/firefox.png && cp firefoxdesktop /usr/share/applications/firefox.desktop && chmod 644 /usr/share/applications/firefox.desktop && cd /usr/bin/ && ln -s /usr/lib/firefox/firefox'
+
+En ubuntu reemplazar su -c por sudo
+
+
+
+Para desinstalar 
+
+su -c 'rm /usr/share/applications/firefox.desktop && rm /usr/share/icons/firefox.png && rm -r /usr/lib/firefox/ && rm /usr/bin/firefox'
+
+
+
+Listo! 
+Para actualizar ejecutar gksu firefox ó kdesu firefox una vez al mes
+Ir a ayuda > acerca de firefox > actualizar
+
+
+
+********************** Instalacion mas detallada **********************
+2. Ejecutar en terminal como root (su ó sudo bash en terminal)
+
+ Ir en terminal a carpeta personal (por ejemplo /home/tunombre)
+ 
+wget http://download.cdn.mozilla.net/pub/mozilla.org/firefox/releases/20.0.1/linux-i686/es-AR/firefox-20.0.1.tar.bz2
+(puedes reemplazar linux-i686 por linux-x86_64 si usas 64 bit o reemplazar localizacion segun tu pais)
+
+
+tar -xvf firefox*.bz2
+
+mv firefox/ /usr/lib/
+
+cd /usr/bin/
+
+ln -s /usr/lib/firefox/firefox
+
+cp /usr/lib/firefox/icons/mozicon128.png /usr/share/icons/firefox.png
+
+cp firefoxdesktop /usr/share/applications/firefox.desktop
+
+chmod 644 /usr/share/applications/firefox.desktop
