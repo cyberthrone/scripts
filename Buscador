@@ -1,0 +1,55 @@
+#!/bin/bash
+# Busca un ejecutable
+# Por ()
+ 
+rojo="\033[1;31m"; ama="\033[1;33m"; azul="\033[1;34m"
+gris="\033[1;30m"; verd="\033[1;32m"; bla="\033[00m"
+ 
+clear; i=0
+ 
+printf  $verd"Alguna idea de como se llama el programa? \n"$bla
+ 
+printf "Como piensas que se llama: "
+ 
+read nombre
+ 
+declare -a lugares=( /bin /usr/bin /usr/local/bin )
+ 
+ruta=`which $nombre 2>> /dev/null`
+ 
+if [ $? -eq 1 ]; then
+printf $rojo"\nNada con which:(\n"$bla
+printf  $azul"Probando con find..."$azul; sleep 1;
+ 
+while [ $i -lt ${#lugares[*]} ]; do
+ 
+busqueda[$i]=`find ${lugares[$i]} -iname "*$nombre*"`
+ 
+let i=i+1
+ 
+done
+ 
+i=0
+ 
+while [ $i -lt ${#busqueda[*]} ]; do
+ 
+if [[ ${busqueda[$i]} == "" ]]; then
+ 
+printf  $rojo"\nNada en ${lugares[$i]}\n"$bla
+ 
+else
+ 
+printf $bla"\nEncontrada conincidencia en ${lugares[$i]}\n"
+printf $ama"${busqueda[$i]}\n"
+ 
+fi
+ 
+let i=i+1
+ 
+done
+ 
+else
+ 
+printf "Listo la ruta es $ama%s\n" $ruta
+ 
+fi
