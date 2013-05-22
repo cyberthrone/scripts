@@ -1,0 +1,2 @@
+sudo -c apt-get install flash-plugin nspluginwrapper.{i386,x86_64}
+ pulseaudio-libs.i386 alsa-plugins-pulseaudio.i386 libcurl.i386'
