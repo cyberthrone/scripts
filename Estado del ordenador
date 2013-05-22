@@ -1,0 +1,13 @@
+#!/bin/sh
+UPT=`uptime | awk '{print $1" "$2" "$3}' | sed s/,//g`;
+MEMTO=`cat /proc/meminfo  | grep "MemTotal" | awk '{print $2}'`;
+ES=`date`;
+QUIEN=`whoami`
+KER=`uname -r`
+MEM=`cat /proc/meminfo  | grep "MemFree" | awk '{print $2}'`
+echo -e "\033[1;33mEstado de la PC by s!tu \033[0m";
+echo -e "\033[1;32mBienvenido:\033[0m $QUIEN";
+echo -e "\033[1;32mHoy es:\033[0m $ES";
+echo -e "\033[1;32mUptime:\033[0m $UPT";
+echo -e "\033[1;32mMemoria Total $MEMTO kB:\033[0m Memoria Libre: $MEM kB";
+echo -e "\033[1;32mVersion del kernel utilizado en el sistema:\033[0m $KER";
