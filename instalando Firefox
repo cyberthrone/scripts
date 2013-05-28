@@ -30,7 +30,7 @@ StartupNotify=true
 
 Ir en terminal a carpeta personal (por ejemplo /home/tunombre)
 
-su -c 'wget http://download.cdn.mozilla.net/pub/mozilla.org/firefox/releases/20.0.1/linux-i686/es-AR/firefox-20.0.1.tar.bz2 && tar -xvf firefox*.bz2 && mv firefox/ /usr/lib/ && cp /usr/lib/firefox/icons/mozicon128.png /usr/share/icons/firefox.png && cp firefoxdesktop /usr/share/applications/firefox.desktop && chmod 644 /usr/share/applications/firefox.desktop && cd /usr/bin/ && ln -s /usr/lib/firefox/firefox'
+su -c 'wget http://download.cdn.mozilla.net/pub/mozilla.org/firefox/releases/20.0.1/linux-i686/es-ES/firefox-20.0.1.tar.bz2 && tar -xvf firefox*.bz2 && mv firefox/ /usr/lib/ && cp /usr/lib/firefox/icons/mozicon128.png /usr/share/icons/firefox.png && cp firefoxdesktop /usr/share/applications/firefox.desktop && chmod 644 /usr/share/applications/firefox.desktop && cd /usr/bin/ && ln -s /usr/lib/firefox/firefox'
 
 En ubuntu reemplazar su -c por sudo
 
@@ -53,7 +53,7 @@ Ir a ayuda > acerca de firefox > actualizar
 
  Ir en terminal a carpeta personal (por ejemplo /home/tunombre)
  
-wget http://download.cdn.mozilla.net/pub/mozilla.org/firefox/releases/20.0.1/linux-i686/es-AR/firefox-20.0.1.tar.bz2
+wget http://download.cdn.mozilla.net/pub/mozilla.org/firefox/releases/20.0.1/linux-i686/es-ES/firefox-20.0.1.tar.bz2
 (puedes reemplazar linux-i686 por linux-x86_64 si usas 64 bit o reemplazar localizacion segun tu pais)
 
 
